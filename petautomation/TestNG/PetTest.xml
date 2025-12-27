@@ -1,0 +1,22 @@
+<suite name="Pet Test Automation Suite" verbose="1">
+    <test name="CreatePet">
+        <classes>
+            <class name="Pet.CreatePetTest"/>
+        </classes>
+    </test>
+    <test name="GetPet">
+        <classes>
+            <class name="Pet.GetPetTest"/>
+        </classes>
+    </test>
+    <test name="UpdatePet">
+        <classes>
+            <class name="Pet.UpdatePetTest"/>
+        </classes>
+    </test>
+    <test name="DeletePet">
+        <classes>
+            <class name="Pet.DeletePetTest"/>
+        </classes>
+    </test>
+</suite>

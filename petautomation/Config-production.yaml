@@ -1,0 +1,9 @@
+pet:
+  BaseUrl: https://petstore.swagger.io
+  BasePath: /v2/pet
+  FindByStatus: /findByStatus
+  UploadImage: /uploadImage
+  ValidationMessagePositive: Response code is not valid. Status code is
+  ValidationMessageNegative: Response code is valid. It must be non-valid status code. Status code is
+  ResponseCodePositive: Response code is not valid. Status code is
+  ResponseCodeNegative: Response body is not null. It must be null
