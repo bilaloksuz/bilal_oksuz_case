@@ -6,9 +6,9 @@
 
 # Dosya içeriği
 
-1- Http istekler unirest ile gönderilmektedir.
+1- Http istekler rest assured ile gönderilmektedir.
 
-2- Testler tek main method altında topluca tetiklenebilmektedir.
+2- Testler TestNG/PetTest.xml altında koşulmaktadır.
 
 3- Eğer herhangi bir test hata alırsa, test durmaktadır.
 
@@ -21,8 +21,8 @@
 
 # File content
 
-1- Http requests are send with unirest.
+1- Http requests are send with rest assured.
 
-2- Tests can be affected collectively under a single main method.
+2- Tests can be run with TestNG/PetTest.xml.
 
 3- If any test is a fail, the test stops.
