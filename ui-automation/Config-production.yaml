@@ -1,0 +1,12 @@
+data:
+  BaseUrl: https://www.insiderone.com
+  Browser: chrome
+  CareerButtonText: We're hiring
+  FindJobButtonText: Find your dream job
+  QaJobButtonText: Quality Assurance
+  QaJobTitle: Quality Assurance
+  DefaultLocation: Istanbul, Turkey
+
+gridConfiguration:
+  gridURL: http://localhost:4444/
+  isDebug: true
