@@ -36,7 +36,7 @@ public class OpenPosition extends BasePage
         String departmentValue=departmentFilter.getText().replace("×\n","");
         assertValue(departmentValue, Config.getConfig().getQaJobButtonText());
         clickButton(locationFilter);
-        cities=$$(byClassName("results__option"));
+        cities=$$(byClassName("job-location"));
         for (int i = 0; i <cities.size() ; i++) {
             if(cities.get(i).getText().equals(Config.getConfig().getDefaultLocation()))
             {
