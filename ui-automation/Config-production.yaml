@@ -5,7 +5,8 @@ data:
   FindJobButtonText: Find your dream job
   QaJobButtonText: Quality Assurance
   QaJobTitle: Quality Assurance
-  DefaultLocation: Istanbul, Turkey
+  DefaultLocation: Istanbul, Turkiye
+  LeverUrl: https://jobs.lever.co/insiderone
 
 gridConfiguration:
   gridURL: http://localhost:4444/

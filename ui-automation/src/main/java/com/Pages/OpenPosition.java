@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 public class OpenPosition extends BasePage
@@ -29,21 +28,16 @@ public class OpenPosition extends BasePage
 
     }
 
-    public void checkAndFilter()
-    {
+    public void checkAndFilter() throws InterruptedException {
+        scroll(200);
+        Thread.sleep(15000);
         isExits("Department Filter is not visible.",departmentFilter);
         isExits("Location Filter is not visible.",locationFilter);
         String departmentValue=departmentFilter.getText().replace("×\n","");
         assertValue(departmentValue, Config.getConfig().getQaJobButtonText());
         clickButton(locationFilter);
         cities=$$(byClassName("job-location"));
-        for (int i = 0; i <cities.size() ; i++) {
-            if(cities.get(i).getText().equals(Config.getConfig().getDefaultLocation()))
-            {
-                myLocation=cities.get(i);
-                break;
-            }
-        }
+        myLocation=cities.stream().filter(x->x.getText().equals(Config.getConfig().getDefaultLocation())).findFirst().orElse(null);
         isExits(Config.getConfig().getDefaultLocation()+" is not visible.",myLocation);
         clickButton(myLocation);
     }

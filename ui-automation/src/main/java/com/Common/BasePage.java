@@ -4,10 +4,9 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.Assert;
-import java.util.ArrayList;
-import java.util.List;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 import static java.time.Duration.ofSeconds;
 
@@ -27,14 +26,14 @@ public abstract class BasePage {
         Assert.assertTrue(message, element.shouldBe(visible, ofSeconds(60)).exists());
     }
 
+    public void scroll(int scrollSize)
+    {
+        executeJavaScript("window.scrollBy(0, "+scrollSize+")");
+    }
+
     public static void isExits(String message, ElementsCollection elements)
     {
         Assert.assertFalse(message, elements.shouldBe(CollectionCondition.sizeGreaterThan(0), ofSeconds(60)).isEmpty());
-    }
-
-    public static void isDisplayed(String message, SelenideElement element)
-    {
-        Assert.assertTrue(message, element.shouldBe(visible, ofSeconds(60)).isDisplayed());
     }
 
     public static void assertValue(String condition, String message)
@@ -45,16 +44,6 @@ public abstract class BasePage {
     public static SelenideElement waitElementForVisible(SelenideElement selenideElement)
     {
         return selenideElement.shouldBe(visible, ofSeconds(60));
-    }
-
-    public static List<SelenideElement> waitElementForVisible(List<SelenideElement> selenideElement)
-    {
-        List<SelenideElement> elements=new ArrayList<>();
-        for (int i = 0; i <selenideElement.size() ; i++)
-        {
-            elements.add(selenideElement.get(i).shouldBe(visible, ofSeconds(60)));
-        }
-        return elements;
     }
 
     public static void clickButton(SelenideElement element) {

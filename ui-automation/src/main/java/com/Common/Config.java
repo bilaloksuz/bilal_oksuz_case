@@ -96,6 +96,10 @@ public class Config {
         return Boolean.parseBoolean(gridConfiguration.get("isDebug"));
     }
 
+    public String getLevelUrl() {
+        return data.get("LeverUrl");
+    }
+
     public Config() {
 
     }

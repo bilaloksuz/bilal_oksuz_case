@@ -77,7 +77,7 @@ public class RunTest {
             openPosition.clickApplyButton();
             switchTo().window(1);
             String leverUrl=WebDriverRunner.getWebDriver().getCurrentUrl();
-            if(!Objects.requireNonNull(leverUrl).contains("https://jobs.lever.co/insiderone"))
+            if(!Objects.requireNonNull(leverUrl).contains(Config.getConfig().getLevelUrl()))
             {
                 Assert.fail("Lever Application is not open");
             }
