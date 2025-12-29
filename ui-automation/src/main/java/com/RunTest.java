@@ -62,7 +62,6 @@ public class RunTest {
             }
             //Selenium grid end
 
-
             /* Test Automation 1. step*/
             landing.openLandingPage();
 
@@ -80,13 +79,13 @@ public class RunTest {
             String leverUrl=WebDriverRunner.getWebDriver().getCurrentUrl();
             if(!Objects.requireNonNull(leverUrl).contains("https://jobs.lever.co/insiderone"))
             {
-                Assert.assertTrue("Lever Application is not open",false);
+                Assert.fail("Lever Application is not open");
             }
         }
         catch (Exception e)
         {
             screenshot("test-failed-"+new Timestamp(System.currentTimeMillis()));
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
     }
